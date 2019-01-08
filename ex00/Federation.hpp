@@ -29,17 +29,16 @@ namespace Federation
             void setupCore(WarpSystem::Core *core);
             void checkCore(void);
         };
-}
+    }
 
-class Ship {
-            private:
+    class Ship {
+        private:
             std::string _name;
             int _length;
             int _width;
-            short _maxWarp;
             WarpSystem::Core *_core;
 
-            public:
+        public:
             Ship(int length, int width, std::string name);
             ~Ship();
             void setupCore(WarpSystem::Core *core);
