@@ -11,7 +11,7 @@
 #include <iostream>
 #include <string>
 
-namespace WarpSystem 
+namespace WarpSystem
 {
         class QuantumReactor {
             private:

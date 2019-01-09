@@ -18,8 +18,8 @@ WarpSystem::QuantumReactor::~QuantumReactor()
 }
 
 WarpSystem::Core::Core(QuantumReactor *reactor)
-{ 
-    this->_coreReactor = reactor;   
+{
+    this->_coreReactor = reactor;
 }
 
 WarpSystem::Core::~Core()
