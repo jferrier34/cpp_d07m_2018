@@ -102,3 +102,114 @@ Federation::Starfleet::Ensign::Ensign(std::string name)
 Federation::Starfleet::Ensign::~Ensign()
 {
 }
+
+
+
+
+
+
+
+
+bool Federation::Starfleet::Ship::move()
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (qr->isStable() == true && this->_location != this->_home) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Starfleet::Ship::move(Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Starfleet::Ship::move(int warp, Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Starfleet::Ship::move(int warp)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != this->_home && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}
+
+
+
+
+
+
+
+
+
+bool Federation::Ship::move()
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (qr->isStable() == true && this->_location != this->_home) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Ship::move(Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Ship::move(int warp, Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Federation::Ship::move(int warp)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != this->_home && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}

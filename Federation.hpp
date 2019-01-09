@@ -12,6 +12,7 @@
 #include <string>
 #include "WarpSystem.hpp"
 #include "Borg.hpp"
+#include "Destination.hpp"
 
 namespace Federation
 {
@@ -38,6 +39,8 @@ namespace Federation
             int _width;
             short _maxWarp;
             WarpSystem::Core *_core;
+            Destination _location;
+            Destination _home;
 
             public:
             Ship(int length, int width, std::string name, short maxWarp);
@@ -45,6 +48,10 @@ namespace Federation
             void setupCore(WarpSystem::Core *core);
             void checkCore();
             void promote(Starfleet::Captain *captain);
+            bool move(int warp, Destination d);
+            bool move(int warp);
+            bool move(Destination d);
+            bool move();
         };
 
         class Ensign {
@@ -62,13 +69,21 @@ namespace Federation
             std::string _name;
             int _length;
             int _width;
+            int _maxWarp;
             WarpSystem::Core *_core;
+            Destination _location;
+            Destination _home;
+
 
         public:
             Ship(int length, int width, std::string name);
             ~Ship();
             void setupCore(WarpSystem::Core *core);
             void checkCore(void);
+            bool move(int warp, Destination d);
+            bool move(int warp);
+            bool move(Destination d);
+            bool move();
         };
 }
 

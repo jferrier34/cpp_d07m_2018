@@ -33,6 +33,10 @@ void Borg::Ship::checkCore()
     std::cout << table << std::endl;
 }
 
+
+
+
+
 bool Borg::Ship::move()
 {
     WarpSystem::Core *ws = this->_core;

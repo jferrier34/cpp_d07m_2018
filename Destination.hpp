@@ -7,7 +7,6 @@
 
 #ifndef DESTINATION_HPP_
 #define DESTINATION_HPP_
-#include "Borg.hpp"
 #include <string>
 #include <iostream>
 
