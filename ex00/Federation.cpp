@@ -25,6 +25,7 @@ Federation::Starfleet::Ship::~Ship(void)
 
 void Federation::Starfleet::Ship::setupCore(WarpSystem::Core *core)
 {
+    this->_core = core;
     std::cout << "USS " << this->_name << ": The core is set." << std::endl;   
 }
 
@@ -52,17 +53,13 @@ Federation::Ship::~Ship(void)
 
 void Federation::Ship::setupCore(WarpSystem::Core *core)
 {
+    _core = core;      
     std::cout << "USS " << this->_name << ": The core is set." << std::endl;   
 }
 
-void Federation::Ship::checkCore(void)
+void Federation::Ship::checkCore()
 {
     bool stable_or_not = this->_core->checkReactor()->isStable();
     std::string table = stable_or_not ? "stable " : "unstable ";
     std::cout << "USS " << this->_name <<  ": The core is " << table << "at the time." << std::endl;
 }
-
-
-
-
-
