@@ -90,7 +90,7 @@ void Federation::Ship::checkCore()
 
 void Federation::Starfleet::Ship::promote(Starfleet::Captain *captain)
 {
-    std::cout << captain->getName() << ": I'm glad to be the captain of the USS " << this->_name <<std::endl;
+    std::cout << captain->getName() << ": I'm glad to be the captain of the USS " << this->_name << "." <<std::endl;
 }
 
 Federation::Starfleet::Ensign::Ensign(std::string name)
