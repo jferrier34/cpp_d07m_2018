@@ -31,3 +31,51 @@ void Borg::Ship::checkCore()
      bool stable_or_not = this->_core->checkReactor()->isStable();
      std::string table = stable_or_not ? "Everything is in order." : "Critical failure imminent";
 }
+
+bool Borg::Ship::move()
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (qr->isStable() == true && this->_location != this->_home) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}
+
+bool Borg::Ship::move(Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Borg::Ship::move(int warp, Destination d)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != d && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = d;
+        return (true);
+    }
+    return (false);
+}
+
+bool Borg::Ship::move(int warp)
+{
+    WarpSystem::Core *ws = this->_core;
+    WarpSystem::QuantumReactor *qr = ws->checkReactor();
+
+    if (this->_location != this->_home && warp <= this->_maxWarp && qr->isStable() == true) {
+        this->_location = this->_home;
+        return (true);
+    }
+    return (false);
+}
